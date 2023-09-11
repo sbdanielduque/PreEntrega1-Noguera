@@ -1,0 +1,12 @@
+.card{
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.card-body img{
+    margin-bottom: 50px;
+}
+
+.card-footer{
+    background-color: white !important
+}
