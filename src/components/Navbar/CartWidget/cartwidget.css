@@ -6,4 +6,5 @@
 .carrito-count{
     color: white;
     margin: 10px;
+    text-decoration: none !important;
 }

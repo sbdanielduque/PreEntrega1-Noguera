@@ -1,11 +1,10 @@
-import { useState } from 'react'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 import NavBar from './components/Navbar/Navbar'
 import ItemListContainer from './components/ItemsContainerList/ItemListContainer';
 import Cart from './components/Cart/Cart';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import ItemCount from './components/ItemCount/ItemCount';
+import { CartContextProvider } from './Context/CartContext';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,6 +13,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
+      <CartContextProvider> 
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer />}/>
@@ -21,6 +21,7 @@ function App() {
         <Route path='/detail/:pid' element={<ItemDetailContainer />}/>
         <Route path='/cart' element={<Cart />} />
         </Routes>
+      </CartContextProvider>
     </BrowserRouter>
     </>
   )

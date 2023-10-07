@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { list } from "../../utils/mockFetch"
 import ItemContainer from "./ItemContainer/ItemContainer"
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
 
 const ItemListContainer = () => {
@@ -11,18 +11,22 @@ const ItemListContainer = () => {
     const { cid } = useParams()
 
     useEffect(()=>{
-        if(cid) {
-            list()
-            .then(respuesta => setProducts(respuesta.filter(product => cid === product.category))) //lista de objetos filtrados
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
-        } else{
-            list()
-        .then(respuesta => setProducts(respuesta)) //lista de objetos completa
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))
+        if(cid) {                                   //lista de objetos filtrados
+            const db = getFirestore()
+            const queryCollection = collection(db, 'products')
+            const queryFilter = query(queryCollection, where('category', '==', cid))
+            getDocs(queryFilter)
+                .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()})))) 
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
+        } else{                                     //lista de objetos completa
+            const db = getFirestore()
+            const queryCollection = collection(db, 'products')
+            getDocs(queryCollection)
+                .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()})))) 
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
         }
-        
     }, [cid]) //cid en las llaves para que llame al render
     return (
         <>

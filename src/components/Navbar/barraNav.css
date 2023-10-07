@@ -5,3 +5,7 @@
 .navBar{
     margin-bottom: 50px;
 }
+
+.navbar a{
+    text-decoration: none;
+}

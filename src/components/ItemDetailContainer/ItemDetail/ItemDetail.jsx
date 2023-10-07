@@ -1,14 +1,21 @@
+import { useState } from "react";
+
+import { useCartContext } from "../../../Context/CartContext";
+import { Link } from "react-router-dom";
 import ItemCount from "../../ItemCount/ItemCount";
 
 const ItemDetail = ({product}) => {
+    const [contador, setContador] = useState(true)
+    const { addProduct } = useCartContext()
     const onAdd = (count) => {
-        console.log(`se agrego ${count} productos al carrito`)
+        addProduct({...product, quantity: count})
+        setContador(false)
     }
     return (
         <div className="card d-flex ">
             <div className="row">
                 <div className="col-6">
-                    <img src={product.image} />
+                    <img className="w-50" src={product.image} />
                 </div>
                 <div className="col-6">
                     <h1>{product.name}</h1>
@@ -22,7 +29,20 @@ const ItemDetail = ({product}) => {
                         <h5>Stock:</h5> {product.stock}
                     </div>
                     <br />
-                    <ItemCount initial={1} stock={product.stock} onAdd={onAdd}/>
+                    <div>
+                        {contador ? 
+                            <ItemCount initial={1} stock={product.stock} onAdd={onAdd}/>
+                            : <>
+                                <Link to={'/'}>
+                                    <button>Seguir Comprando</button>
+                                </Link>
+                                <Link to={'/cart'}>
+                                    <button>Ir al Carrito</button>
+                                </Link>
+                            </>
+                        }
+                    </div>
+                    
                 </div>
             </div>
         </div>
