@@ -31,15 +31,15 @@ const ItemDetail = ({product}) => {
                     <br />
                     <div>
                         {contador ? 
-                            <ItemCount initial={1} stock={product.stock} onAdd={onAdd}/>
-                            : <>
-                                <Link to={'/'}>
-                                    <button>Seguir Comprando</button>
-                                </Link>
-                                <Link to={'/cart'}>
-                                    <button>Ir al Carrito</button>
-                                </Link>
-                            </>
+                                <ItemCount initial={1} stock={product.stock} onAdd={onAdd}/>
+                                : <>
+                                    <Link to={'/'}>
+                                        <button>Select othe item</button>
+                                    </Link>
+                                    <Link to={'/cart'}>
+                                        <button>Your Cart</button>
+                                    </Link>
+                                </>
                         }
                     </div>
                     

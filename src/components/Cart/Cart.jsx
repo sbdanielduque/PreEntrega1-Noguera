@@ -10,7 +10,7 @@ const Cart = () => {
         <div>
             <ItemCart />
             <div className="text-center">
-                    {precioTotal() !== 0 && <h3 className="text-white">precio total: {precioTotal().toFixed(2)}</h3>}
+                {precioTotal() !== 0 && <h3 className="text-white">Total price: {precioTotal().toFixed(2)}</h3>}
             </div>
             <CartForm />
         </div>

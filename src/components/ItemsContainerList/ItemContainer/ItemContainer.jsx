@@ -6,7 +6,8 @@ const ItemContainer = ({products}) => {
             {products.map(product => <Item key={product.id} product={product}/>
                         )
             }
-        </>    )
+        </>   
+    )
 }
 
 export default ItemContainer

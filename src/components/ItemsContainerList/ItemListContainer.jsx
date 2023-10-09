@@ -11,22 +11,13 @@ const ItemListContainer = () => {
     const { cid } = useParams()
 
     useEffect(()=>{
-        if(cid) {                                   //lista de objetos filtrados
-            const db = getFirestore()
-            const queryCollection = collection(db, 'products')
-            const queryFilter = query(queryCollection, where('category', '==', cid))
-            getDocs(queryFilter)
-                .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()})))) 
-                .catch(err => console.log(err))
-                .finally(() => setLoading(false))
-        } else{                                     //lista de objetos completa
-            const db = getFirestore()
-            const queryCollection = collection(db, 'products')
-            getDocs(queryCollection)
-                .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()})))) 
-                .catch(err => console.log(err))
-                .finally(() => setLoading(false))
-        }
+        const db = getFirestore()
+        const queryCollection = collection(db, 'products')
+        const queryFilter = cid ? query(queryCollection, where('category', '==', cid)) : queryCollection
+        getDocs(queryFilter)
+            .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()})))) 
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false))
     }, [cid]) //cid en las llaves para que llame al render
     return (
         <>

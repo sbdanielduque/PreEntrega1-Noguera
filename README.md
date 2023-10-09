@@ -1,8 +1,26 @@
-# React + Vite
+Tu Compu Ideal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+###Deploy - Demo
+-https://jocular-dragon-29b05d.netlify.app
 
-Currently, two official plugins are available:
+-Git clone
+-git cd Project1
+-npm i
+-npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Librerias - Project1
+
+-Bootstrap | 5.3.1 | estilos
+-react-bootstrap | 2.8.0 | estilos
+-react-router-dom | 6.15.0 | Rutas
+-react | 18.2.0 | 
+-react-dom | 18.2.0 |
+-firebase | 10.4.0 | Base de Datos
+-vite | 4.4.5 | 
+
+Resumen de la App:
+ Ecommerce de productos de Computadora.
+ en esta tienda podras seleccionar los productos de tu preferencia y la cantidad deseada a comprar, dejando tu contacto y obteniendo un recibo de compra al finalizar, podras agregar o eliminar productos del carrito si es que lo deseas.
+
+Daniel Noguera
+danielduque3004@gmail.com

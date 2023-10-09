@@ -20,15 +20,15 @@ const ItemDetailContainer = () => {
     }, [])
     return (
         <div>
-            {
-            loading ? 
-            <div className="text-center">
-                <div className="spinner-border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
-            </div>
-            : 
-            <ItemDetail product={product}/>}
+            {loading ? 
+                        <div className="text-center">
+                            <div className="spinner-border" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    : 
+                        <ItemDetail product={product}/>
+            }
         </div>
     )
 }

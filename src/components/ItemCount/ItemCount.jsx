@@ -8,7 +8,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
             <label>
                 <p>
                     <button onClick={handleSubs}> - 1</button>
-                    {count}
+                        {count}
                     <button onClick={handleAdd}> + 1</button>
                 </p>
             </label>
