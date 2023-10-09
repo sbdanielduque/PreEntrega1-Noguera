@@ -7,7 +7,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { CartContextProvider } from './Context/CartContext';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import './app.css'
+import './app.css'
 
 function App() {
 
