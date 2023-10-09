@@ -1,0 +1,21 @@
+.sectionCard{
+    display: flex;
+    justify-content: center;
+}
+.card{
+    
+    box-shadow: 0px 0px 14px white;
+}
+
+.card-link{
+    text-decoration: none;
+    margin-left: 160px;
+    border: solid 1px grey;
+    padding: 10px;
+    background-color: black;
+}
+
+.card-link:hover{
+    transition: 0.3s ease-in-out;
+    background: grey
+}

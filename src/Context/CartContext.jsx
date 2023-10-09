@@ -39,7 +39,7 @@ export const CartContextProvider = ({ children }) => {
             deleteProd,
             productosEnCarrito,
             eliminarProducto,
-            precioTotal,
+            precioTotal
         }}>
             {children}
         </CartContext.Provider>
